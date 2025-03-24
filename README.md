@@ -1,6 +1,6 @@
 # 🚀 Project Name
 
-## 📌 Table of Contents
+## 📌 Table of Contents 
 - [Introduction](#introduction)
 - [Demo](#demo)
 - [Inspiration](#inspiration)
