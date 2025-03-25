@@ -1,0 +1,6 @@
+@MailClassifyer.Server_HostAddress = http://localhost:5281
+
+GET {{MailClassifyer.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,71 @@
+﻿<h1 id="tableLabel" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Banking Mail Filter Pro</h1>
+<p style="text-align: right;"> <strong>WFCustomerSupport&#64;wfsBank.com </strong> </p>
+<!-- <p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p> -->
+
+<table *ngIf="emails">
+    <thead>
+        <tr>
+            <th style="border: 1px solid black; padding: 8px; background-color: gold;"></th>
+            <th style="border: 1px solid black; padding: 8px; background-color: gold;">From</th>
+            <!-- <th>To</th> -->
+            <th style="border: 1px solid black; padding: 8px; background-color: gold;">Severity</th>
+            <th style="border: 1px solid black; padding: 8px; background-color: gold">Category</th>
+            <th style="border: 1px solid black; padding: 8px; background-color: gold">Subject</th>
+            <th style="border: 1px solid black; padding: 8px; background-color: gold">Body</th>
+            <th style="border: 1px solid black; padding: 8px; background-color: gold">Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of emails">
+           <td> <input type="checkbox" /> </td>
+            <td style="border: 1px solid black; background-color:bisque"> {{ forecast.mailFrom }}  </td>
+            <!-- <td>{{ forecast.mailTo }}</td> -->
+            <!-- <td style="border: 1px solid black; background-color: forecast. bisque">{{ forecast.severity }}</td>    -->
+            <td [ngStyle]="{'background-color': forecast.severity === 'Critical' ? 'red' : (forecast.severity === 'High') ? 'orange' :  (forecast.severity === 'Low') ? 'Green' : 'bisque'}">
+              <strong> {{  forecast.severity }} </strong> 
+              </td>
+            <td [ngStyle]="{'background-color': forecast.severity === 'Critical' ? 'red' : (forecast.severity === 'High') ? 'orange' :  (forecast.severity === 'Low') ? 'Green' : 'bisque'}">
+                <strong> {{ forecast.businessCategory }} </strong> 
+            </td>            
+            <td style="border: 1px solid black; background-color:bisque">{{ forecast.mailSubject }}</td>
+            <td style="border: 1px solid black; background-color:bisque">{{ forecast.mailText }}</td>
+            <td style="border: 1px solid black; background-color:bisque">{{ forecast.mailTimestamp }}</td>
+            
+             
+        </tr>
+    </tbody>
+</table>
+
+<!-- <table *ngIf="forecasts">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp. (C)</th>
+            <th>Temp. (F)</th>
+            <th>Summary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forecast of forecasts">
+            <td>{{ forecast.date }}</td>
+            <td>{{ forecast.temperatureC }}</td>
+            <td>{{ forecast.temperatureF }}</td>
+            <td>{{ forecast.summary }}</td>
+        </tr>
+    </tbody>
+</table> -->
+<!-- <div>
+    <div *ngFor="let email of emails"> 
+         
+      <div>
+        <span>{{ email.mailFrom }}</span>
+        <span>{{ email.mailTo }}</span>
+        <span>{{ email.mailSubject }}</span>
+        <span>{{ email.mailText }}</span>
+        <span>{{ email.mailTimestamp }}</span>
+        <span>{{ email.businessCategory }}</span>
+        <span>{{ email.severity }}</span>        
+      </div>
+    
+    </div>
+  </div> -->
